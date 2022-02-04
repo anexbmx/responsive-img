@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reponsive Image</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                min-height: 100%;
+                height: 100%;
+                background-color: #222;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            img {
+                max-width: 100%;
+            }
+            .cover {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            main {
+                position: relative;
+                height: 100vh;
+                width: 100vw;
+                background-color: #000;
+                overflow: hidden;
+            }
+
+            main::after,
+            main::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 300px;
+                background: rgb(0, 0, 0);
+            }
+            main::after {
+                top: 0;
+                background: linear-gradient(
+                    180deg,
+                    #222 0%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+            }
+            main::before {
+                height: 50%;
+                bottom: 0;
+                background: linear-gradient(
+                    0deg,
+                    #222 0%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+            }
+
+            .main__bottom {
+                position: absolute;
+                text-align: center;
+                bottom: 0;
+                width: 100%;
+                
+                padding-bottom: 30px;
+               
+            }
+
+            .main__bottom img {
+                width: 90%;
+                max-width: 550px;
+            }
+            h1 {
+                margin: 40px auto;
+                text-align: center;
+            }
+
+            a {
+                padding: 8px 16px;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 16px;
+                background-color: #D06F1D;
+                margin-top: 16px;
+                display: inline-block;
+                text-decoration: none;
+            }
+
+            a:hover {
+                opacity: 0.8;
+            }
+
+            hr {
+                 border-color: rgb(255 255 255 / 10%);
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <img class="cover"
+                src="assets/img/aot.png"
+                alt="Poster final saison"
+                srcset="
+                    assets/img/aot@4x.png 4x,
+                    assets/img/aot@3x.png 3x,
+                    assets/img/aot@2x.png 2x,
+                    assets/img/aot.png    1x
+                "
+            />
+            <div class="main__bottom">
+                <img
+                    src="assets/img/logo-xs.png"
+                    alt="Poster final saison"
+                    srcset="
+                        assets/img/logo-xs@4x.png 4x,
+                        assets/img/logo-xs@3x.png 3x,
+                        assets/img/logo-xs@2x.png 2x,
+                        assets/img/logo-xs.png    1x
+                    "
+                />
+                <hr/>
+                <a href="#">Titans</a>
+            </div>
+        </main>
+    </body>
+</html>
