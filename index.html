@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reponsive Image</title>
+        <style>
+            body {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                width: 100vw;
+                background-color: #000;
+            }
+
+            img {
+                width: 100%;
+            }
+
+           
+
+            main {
+                position: relative;
+            }
+
+            main::after,
+            main::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 200px;
+                background: rgb(0, 0, 0);
+            }
+            main::after {
+                top: 0;
+                background: linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+            }
+            main::before {
+                bottom: 0;
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%); 
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <main>
+            <picture>
+                <source
+                    media="(max-width: 320px)"
+                    srcset="
+                        assets/img/320x569@4x.png 4x,
+                        assets/img/320x569@3x.png 3x,
+                        assets/img/320x569@2x.png 2x,
+                        assets/img/320x569.png    1x
+                    "
+                />
+                <source
+                    media="(max-width: 360px)"
+                    srcset="
+                        assets/img/360x640@4x.png 4x,
+                        assets/img/360x640@3x.png 3x,
+                        assets/img/360x640@2x.png 2x,
+                        assets/img/360x640.png    1x
+                    "
+                />
+                <source
+                    media="(max-width: 480px)"
+                    srcset="
+                        assets/img/480x854@4x.png 4x,
+                        assets/img/480x854@3x.png 3x,
+                        assets/img/480x854@2x.png 2x,
+                        assets/img/480x854.png    1x
+                    "
+                />
+                <source
+                    media="(max-width: 480px)"
+                    srcset="
+                        assets/img/480x854@4x.png 4x,
+                        assets/img/480x854@3x.png 3x,
+                        assets/img/480x854@2x.png 2x,
+                        assets/img/480x854.png    1x
+                    "
+                />
+                <source
+                    media="(max-width: 960px)"
+                    srcset="
+                        assets/img/960x540@4x.png 4x,
+                        assets/img/960x540@3x.png 3x,
+                        assets/img/960x540@2x.png 2x,
+                        assets/img/960x540.png    1x
+                    "
+                />
+                <source
+                    media="(max-width: 1024px)"
+                    srcset="
+                        assets/img/1024x640@4x.png 4x,
+                        assets/img/1024x640@3x.png 3x,
+                        assets/img/1024x640@2x.png 2x,
+                        assets/img/1024x640.png    1x
+                    "
+                />
+                <source
+                    media="(max-width: 1920px)"
+                    srcset="
+                        assets/img/1920x1080@4x.png 4x,
+                        assets/img/1920x1080@3x.png 3x,
+                        assets/img/1920x1080@2x.png 2x,
+                        assets/img/1920x1080.png    1x
+                    "
+                />
+                <source
+                    media="(max-width: 1366px)"
+                    srcset="
+                        assets/img/1366x768@4x.png 4x,
+                        assets/img/1366x768@3x.png 3x,
+                        assets/img/1366x768@2x.png 2x,
+                        assets/img/1366x768.png    1x
+                    "
+                />
+                <img src="assets/img/320x569.png" alt="AOT Poster Saison 4" />
+            </picture>
+        </main>
+    </body>
+</html>
